@@ -1,0 +1,22 @@
+ALGORITHM tri_insertion
+VAR
+    tab: ARRAY_OF INTEGER;
+    i,j,n,temp:INTEGER;
+BEGIN
+    Write("taille de tableau");
+    Read (n);
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Read(tab[i])
+    END_FOR
+
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        temp=tab[i];
+        j:=i-1;
+        WHILE ((temp<tab[j]) AND (j>=0)) DO
+                tab[j+1]:=tab[j];
+                j--;
+            END_IF
+        END_WHILE
+        tab[j]:=temp;
+    END_FOR
+END
